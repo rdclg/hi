@@ -1,0 +1,25 @@
+import pandas as pd
+
+data = {
+    "Result": ["Pass", "Pass", "Pass", "Pass", "Pass",
+               "Pass", "Pass", "Pass", "Pass", "Fail"]
+}
+
+df = pd.DataFrame(data)
+
+print("Class Counts:")
+print(df["Result"].value_counts())
+
+print("\nClass Percentages:")
+print(df["Result"].value_counts(normalize=True) * 100)
+
+OT
+Class Counts:
+Result
+Pass    9
+Fail    1
+
+Class Percentages:
+Result
+Pass    90.0
+Fail    10.0

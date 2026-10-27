@@ -1,0 +1,18 @@
+table = {
+    ("A", "Dirty"): "Suck",
+    ("A", "Clean"): "Move Right",
+    ("B", "Dirty"): "Suck",
+    ("B", "Clean"): "Move Left"
+}
+
+location = input("Enter location (A/B): ").strip().upper()
+status = input("Enter status (Dirty/Clean): ").strip().capitalize()
+
+action = table.get((location, status), "Invalid input")
+
+print("Action:", action)
+
+out put 
+Enter location (A/B): a
+Enter status (Dirty/Clean): dirty
+Action: Suck

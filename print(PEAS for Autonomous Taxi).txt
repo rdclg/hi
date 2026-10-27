@@ -1,0 +1,13 @@
+print("PEAS for Autonomous Taxi")
+
+print("Performance Measure: Safe driving, saving time and fuel")
+print("Environment: Roads, traffic, pedestrians and signals")
+print("Actuators: Steering, brakes, accelerator and horn")
+print("Sensors: Camera, GPS, radar and lidar")
+
+OT
+PEAS for Autonomous Taxi
+Performance Measure: Safe driving, saving time and fuel
+Environment: Roads, traffic, pedestrians and signals
+Actuators: Steering, brakes, accelerator and horn
+Sensors: Camera, GPS, radar and lidar

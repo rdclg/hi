@@ -1,0 +1,23 @@
+from sklearn.datasets import load_iris
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import cross_val_score, KFold
+
+data = load_iris()
+X = data.data
+y = data.target
+
+model = DecisionTreeClassifier(random_state=42)
+
+kfold = KFold(n_splits=5, shuffle=True, random_state=42)
+
+scores = cross_val_score(
+    model, X, y, cv=kfold, scoring="accuracy"
+)
+
+print("Validation scores:", scores)
+print("Mean accuracy:", scores.mean())
+
+OP
+Validation scores: [1.         0.96666667 0.93333333
+                    0.93333333 0.93333333]
+Mean accuracy: 0.9533333333333335

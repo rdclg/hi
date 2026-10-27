@@ -1,0 +1,13 @@
+prior = 0.10
+sensitivity = 0.90
+false_positive = 0.20
+
+a = prior * sensitivity
+b = a + (1 - prior) * false_positive
+
+answer = a / b
+
+print("Probability =", answer * 100, "%")
+
+OT
+Probability = 33.33333333333333 %

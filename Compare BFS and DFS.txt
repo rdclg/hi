@@ -1,0 +1,44 @@
+from collections import deque
+
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': [],
+    'F': []
+}
+
+def bfs(start):
+    visited = []
+    queue = deque([start])
+
+    while queue:
+        node = queue.popleft()
+
+        if node not in visited:
+            visited.append(node)
+            queue.extend(graph[node])
+
+    print("BFS:", visited)
+
+def dfs(start):
+    visited = []
+    stack = [start]
+
+    while stack:
+        node = stack.pop()
+
+        if node not in visited:
+            visited.append(node)
+            stack.extend(reversed(graph[node]))
+
+    print("DFS:", visited)
+
+bfs('A')
+dfs('A')
+
+OP
+
+BFS: ['A', 'B', 'C', 'D', 'E', 'F']
+DFS: ['A', 'B', 'D', 'E', 'C', 'F']

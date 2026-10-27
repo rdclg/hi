@@ -1,0 +1,35 @@
+import heapq
+
+graph = {
+    'A': [('B', 1), ('C', 4)],
+    'B': [('C', 2), ('D', 5)],
+    'C': [('D', 1)],
+    'D': []
+}
+
+queue = [(0, 'A', ['A'])]
+visited = set()
+
+while queue:
+    cost, node, path = heapq.heappop(queue)
+
+    if node in visited:
+        continue
+
+    visited.add(node)
+
+    if node == 'D':
+        print("Path:", path)
+        print("Total cost:", cost)
+        break
+
+    for next_node, weight in graph[node]:
+        if next_node not in visited:
+            heapq.heappush(
+                queue,
+                (cost + weight, next_node, path + [next_node])
+            )
+
+OP
+Path: ['A', 'B', 'C', 'D']
+Total cost: 4
